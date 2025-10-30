@@ -6,18 +6,21 @@ app = Flask(__name__)
 
 
 def get_sides():
-    """Return how many sides the die should have based on the DICE_SIDES env var."""
-    # TODO: leer DICE_SIDES desde la variable de entorno (usa os.getenv como base)
-    # TODO: convertirlo a int, validar que sea >= 2 y devolverlo
-    # TODO: si la variable no existe o es invalida, devolver 6
-    return 6  # placeholder para que la app arranque
+    sides = os.getenv("DICE_SIDES", "6")
+    try:
+        sides_int = int(sides)
+        if sides_int < 1:
+            raise ValueError
+        return sides_int
+    except ValueError:
+        return 6
 
 
 @app.route("/")
 def index():
     sides = get_sides()
     # TODO: generar un numero aleatorio entre 1 y `sides`
-    result = 1
+    result = random.randint(1, sides)
     return render_template("index.html", result=result, sides=sides)
 
 
