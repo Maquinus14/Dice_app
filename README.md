@@ -60,3 +60,4 @@ Esta actividad replica la dinamica de "Flask Cats" pero aplicada a un dado virtu
 - **Dockerizacion** (4 pt): build sin errores; puerto 5000 expuesto; contenedor operativo al publicar `8888:5000`.
 - **Documentacion** (2 pt): README con comandos y captura.
 # Dice_app
+<img width="1918" height="1021" alt="image" src="https://github.com/user-attachments/assets/574c3d7c-6754-4873-a9fd-081386ae7151" />
